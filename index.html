@@ -5,153 +5,79 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>GEMFINITY</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Prompt&display=swap');
     body {
-      margin: 0;
       font-family: 'Prompt', sans-serif;
-      background: linear-gradient(to bottom right, #e0f7ff, #ffffff);
-      color: #333;
-    }
-
-    header {
-      background-color: #d0ecff;
-      padding: 1rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-
-    .logo {
-      font-size: 1.5rem;
-      font-weight: bold;
-      color: #0077cc;
-    }
-
-    .menu-btn {
-      font-size: 1.5rem;
-      background: none;
-      border: none;
-      cursor: pointer;
-    }
-
-    .popup {
-      display: none;
-      position: fixed;
-<!DOCTYPE html>
-<html lang="th">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>GEMFINITY</title>
-  <style>
-    body {
+      background: #f0faff;
       margin: 0;
-      font-family: 'Prompt', sans-serif;
-      background: linear-gradient(to bottom right, #e0f7ff, #ffffff);
-      color: #333;
-    }
-
-    header {
-      background-color: #d0ecff;
-      padding: 1rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-
-    .logo {
-      font-size: 1.5rem;
-      font-weight: bold;
-      color: #0077cc;
-    }
-
-    .menu-btn {
-      font-size: 1.5rem;
-      background: none;
-      border: none;
-      cursor: pointer;
-    }
-
-    .popup {
-      display: none;
-      position: fixed;
-      top: 20%;
-      left: 10%;
-      width: 80%;
-      padding: 1rem;
-      background: white;
-      border: 2px solid #0077cc;
-      box-shadow: 0 0 10px rgba(0,0,0,0.2);
-      z-index: 100;
-    }
-
-    .main {
       padding: 2rem;
-      text-align: center;
+      color: #222;
     }
-
-    .main h1 {
+    .container {
+      max-width: 600px;
+      margin: auto;
+      background: white;
+      padding: 2rem;
+      border-radius: 20px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+    }
+    h1 {
       font-size: 2.2rem;
-      color: #0066aa;
+      color: #1a73e8;
+      margin-bottom: 0.2rem;
     }
-
-    .main p {
-      margin-top: 1rem;
-      font-size: 1rem;
+    h2 {
+      font-size: 1.2rem;
+      font-weight: 500;
       color: #444;
     }
-
-    .main .button {
-      margin-top: 2rem;
-      padding: 0.7rem 1.5rem;
-      background-color: #00aaff;
+    .btn {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.75rem 1.5rem;
+      background: #1a73e8;
       color: white;
       border: none;
-      border-radius: 8px;
-      font-size: 1rem;
-      cursor: pointer;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s ease;
+      box-shadow: 0 4px 12px rgba(26, 115, 232, 0.2);
     }
-
-    .overlay {
-      display: none;
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background-color: rgba(0,0,0,0.3);
-      z-index: 50;
+    .btn:hover {
+      background: #0c5fce;
+    }
+    .note {
+      margin-top: 2rem;
+      font-size: 0.95rem;
+      color: #555;
+    }
+    a {
+      color: #1a73e8;
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
-  <header>
-    <div class="logo">GEMFINITY</div>
-    <button class="menu-btn" onclick="togglePopup()">☰</button>
-  </header>
+  <div class="container">
+    <h1>GEMFINITY</h1>
+    <h2>การลงทุน ที่ได้ทั้งความสบายใจ และความมั่นคง</h2>
+    <p>ยังมีสินทรัพย์ให้เลือกลงทุนอีกมากมาย เช่น กองทุนรวม กองทุนดัชนี ตราสารหนี้ ฯลฯ</p>
 
-  <div class="overlay" id="overlay" onclick="togglePopup()"></div>
-  <div class="popup" id="popup">
-    <p><strong>ติดต่อผู้พัฒนา:</strong> <a href="https://www.facebook.com/phu.kha.ray.yxy.323612" target="_blank">เซียน หยอง</a></p>
-    <p>ยอดคงเหลือ ≈ 0.000$</p>
-    <p>หากท่านต้องการชำระเงิน โปรดติดต่อผู้ดูแลฯ เพื่อความปลอดภัยในสินทรัพย์ของท่าน</p>
+    <a href="#" class="btn">ดูสินทรัพย์ทั้งหมด</a>
+
+    <p style="margin-top: 2rem;">
+      ผู้ดูแลระบบได้พัฒนา สำหรับกลุ่มวัยรุ่น / เยาวชน ได้ลงทุนกันอย่างทั่วถึง ฝากขั้นต่ำเพียง 1 บาท
+    </p>
+
+    <p>เครดิตผู้พัฒนา: เซียน หยอง</p>
+    <p><a href="https://facebook.com/เซียน หยอง" target="_blank">Facebook เซียน หยอง</a></p>
+
+    <div class="note">
+      ยอดคงเหลือ ≈ 0.000$
+      <br/>
+      หากท่านต้องการชำระเงิน โปรดติดต่อผู้ดูแลฯ เพื่อความปลอดภัยในสินทรัพย์ของท่าน
+    </div>
   </div>
-
-  <div class="main">
-    <h1>การลงทุน ที่ได้ทั้งความสบายใจ และความมั่นคง</h1>
-    <p>ยังมีสินทรัพย์ให้เลือกอีกมากมาย เช่น กองทุนรวม กองทุนดัชนี ตราสารหนี้ ฯลฯ</p>
-    <p>ผู้ดูแลระบบได้พัฒนา สำหรับกลุ่มวัยรุ่น/เยาวชน ให้เข้าถึงการลงทุนง่ายขึ้น ฝากขั้นต่ำเพียง 1 บาท</p>
-    <p style="margin-top:1rem; color:#888;">เครดิตผู้พัฒนา: เซียน หยอง</p>
-    <button class="button" onclick="window.location.href='exchange.html'">ดูสินทรัพย์ทั้งหมด</button>
-  </div>
-
-  <script>
-    function togglePopup() {
-      const popup = document.getElementById("popup");
-      const overlay = document.getElementById("overlay");
-      const isVisible = popup.style.display === "block";
-      popup.style.display = isVisible ? "none" : "block";
-      overlay.style.display = isVisible ? "none" : "block";
-    }
-  </script>
 </body>
 </html>
