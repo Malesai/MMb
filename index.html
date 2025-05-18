@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GEMFINITY</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Prompt', sans-serif;
+      background: linear-gradient(to bottom right, #e0f7ff, #ffffff);
+      color: #333;
+    }
+
+    header {
+      background-color: #d0ecff;
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #0077cc;
+    }
+
+    .menu-btn {
+      font-size: 1.5rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .popup {
+      display: none;
+      position: fixed;
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GEMFINITY</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Prompt', sans-serif;
+      background: linear-gradient(to bottom right, #e0f7ff, #ffffff);
+      color: #333;
+    }
+
+    header {
+      background-color: #d0ecff;
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #0077cc;
+    }
+
+    .menu-btn {
+      font-size: 1.5rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .popup {
+      display: none;
+      position: fixed;
+      top: 20%;
+      left: 10%;
+      width: 80%;
+      padding: 1rem;
+      background: white;
+      border: 2px solid #0077cc;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      z-index: 100;
+    }
+
+    .main {
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .main h1 {
+      font-size: 2.2rem;
+      color: #0066aa;
+    }
+
+    .main p {
+      margin-top: 1rem;
+      font-size: 1rem;
+      color: #444;
+    }
+
+    .main .button {
+      margin-top: 2rem;
+      padding: 0.7rem 1.5rem;
+      background-color: #00aaff;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    .overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0,0,0,0.3);
+      z-index: 50;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">GEMFINITY</div>
+    <button class="menu-btn" onclick="togglePopup()">☰</button>
+  </header>
+
+  <div class="overlay" id="overlay" onclick="togglePopup()"></div>
+  <div class="popup" id="popup">
+    <p><strong>ติดต่อผู้พัฒนา:</strong> <a href="https://www.facebook.com/phu.kha.ray.yxy.323612" target="_blank">เซียน หยอง</a></p>
+    <p>ยอดคงเหลือ ≈ 0.000$</p>
+    <p>หากท่านต้องการชำระเงิน โปรดติดต่อผู้ดูแลฯ เพื่อความปลอดภัยในสินทรัพย์ของท่าน</p>
+  </div>
+
+  <div class="main">
+    <h1>การลงทุน ที่ได้ทั้งความสบายใจ และความมั่นคง</h1>
+    <p>ยังมีสินทรัพย์ให้เลือกอีกมากมาย เช่น กองทุนรวม กองทุนดัชนี ตราสารหนี้ ฯลฯ</p>
+    <p>ผู้ดูแลระบบได้พัฒนา สำหรับกลุ่มวัยรุ่น/เยาวชน ให้เข้าถึงการลงทุนง่ายขึ้น ฝากขั้นต่ำเพียง 1 บาท</p>
+    <p style="margin-top:1rem; color:#888;">เครดิตผู้พัฒนา: เซียน หยอง</p>
+    <button class="button" onclick="window.location.href='exchange.html'">ดูสินทรัพย์ทั้งหมด</button>
+  </div>
+
+  <script>
+    function togglePopup() {
+      const popup = document.getElementById("popup");
+      const overlay = document.getElementById("overlay");
+      const isVisible = popup.style.display === "block";
+      popup.style.display = isVisible ? "none" : "block";
+      overlay.style.display = isVisible ? "none" : "block";
+    }
+  </script>
+</body>
+</html>
