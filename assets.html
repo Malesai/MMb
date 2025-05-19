@@ -1,127 +1,261 @@
-<!DOCTYPE html><html lang="th">
+<!DOCTYPE html>
+<html lang="th">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>GEMFINITY | สินทรัพย์ทั้งหมด</title>
   <style>
     body {
       margin: 0;
       font-family: 'Sarabun', sans-serif;
-      background-color: #f2faff;
-      color: #333;
+      background-color: #f0f8ff;
+      color: #003366;
     }
+
     header {
       background-color: #cce7ff;
-      padding: 16px;
+      padding: 20px;
       text-align: center;
-      font-size: 24px;
+      font-size: 26px;
       font-weight: bold;
       color: #005a99;
     }
+
     .container {
-      padding: 16px;
+      padding: 20px;
       display: flex;
       flex-direction: column;
-<!DOCTYPE html><html lang="th">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GEMFINITY | สินทรัพย์ทั้งหมด</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Sarabun', sans-serif;
-      background-color: #f2faff;
-      color: #333;
+      gap: 20px;
     }
-    header {
-      background-color: #cce7ff;
-      padding: 16px;
-      text-align: center;
-      font-size: 24px;
-      font-weight: bold;
-      color: #005a99;
-    }
-    .container {
-      padding: 16px;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
+
     .asset-card {
-      background-color: #e6f2ff;
+      background-color: #eaf6ff;
       border-radius: 16px;
-      padding: 16px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+      padding: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
       display: flex;
       flex-direction: column;
       gap: 8px;
+      transition: transform 0.2s;
     }
+
+    .asset-card:hover {
+      transform: translateY(-3px);
+    }
+
     .asset-title {
       font-size: 18px;
       font-weight: bold;
+      color: #005a99;
     }
+
     .asset-info {
       font-size: 14px;
+      color: #333;
     }
+
     .buy-button {
-      align-self: flex-start;
-      background-color: #4CAF50;
+      background-color: #4a90e2;
       color: white;
       border: none;
       padding: 12px 24px;
       font-size: 16px;
       border-radius: 12px;
       cursor: pointer;
-      transition: background-color 0.2s;
+      width: fit-content;
     }
+
     .buy-button:hover {
-      background-color: #388e3c;
+      background-color: #357ab8;
     }
-    @media (max-width: 768px) {
-      .container {
-        padding: 12px;
-      }
-      .buy-button {
-        width: 100%;
-        text-align: center;
-      }
+
+    .popup {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0,0,0,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 999;
+      display: none;
+    }
+
+    .popup-content {
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GEMFINITY | สินทรัพย์ทั้งหมด</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Sarabun', sans-serif;
+      background-color: #f0f8ff;
+      color: #003366;
+    }
+
+    header {
+      background-color: #cce7ff;
+      padding: 20px;
+      text-align: center;
+      font-size: 26px;
+      font-weight: bold;
+      color: #005a99;
+    }
+
+    .container {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .asset-card {
+      background-color: #eaf6ff;
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      transition: transform 0.2s;
+    }
+
+    .asset-card:hover {
+      transform: translateY(-3px);
+    }
+
+    .asset-title {
+      font-size: 18px;
+      font-weight: bold;
+      color: #005a99;
+    }
+
+    .asset-info {
+      font-size: 14px;
+      color: #333;
+    }
+
+    .buy-button {
+      background-color: #4a90e2;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      font-size: 16px;
+      border-radius: 12px;
+      cursor: pointer;
+      width: fit-content;
+    }
+
+    .buy-button:hover {
+      background-color: #357ab8;
+    }
+
+    .popup {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0,0,0,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 999;
+      display: none;
+    }
+
+    .popup-content {
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .popup-content h2 {
+      color: #007acc;
+      margin-bottom: 10px;
+    }
+
+    .popup-content p {
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+
+    .popup-content a {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #007acc;
+      color: white;
+      text-decoration: none;
+      border-radius: 10px;
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      padding: 16px;
+      font-size: 14px;
+      color: #666;
+      background-color: #e3f2fd;
+      margin-top: 30px;
     }
   </style>
 </head>
 <body>
-  <header>GEMFINITY | สินทรัพย์ทั้งหมด</header>
-  <div class="container">
-    <div class="asset-card">
-      <div class="asset-title">Apple Inc. (AAPL)</div>
-      <div class="asset-info">ราคา: 2.00 บาท | ปันผลรายสัปดาห์ ≈ 0.19%</div>
-      <button class="buy-button" onclick="location.href='buy.html'">ซื้อ</button>
-    </div>
-    <div class="asset-card">
-      <div class="asset-title">Tesla Inc. (TSLA)</div>
-      <div class="asset-info">ราคา: 2.00 บาท | ปันผลรายสัปดาห์ ≈ 0.08%</div>
-      <button class="buy-button" onclick="location.href='buy.html'">ซื้อ</button>
-    </div>
-    <div class="asset-card">
-      <div class="asset-title">Microsoft Corp. (MSFT)</div>
-      <div class="asset-info">ราคา: 2.00 บาท | ปันผลรายสัปดาห์ ≈ 0.13%</div>
-      <button class="buy-button" onclick="location.href='buy.html'">ซื้อ</button>
-    </div>
-    <div class="asset-card">
-      <div class="asset-title">Coca-Cola Co. (KO)</div>
-      <div class="asset-info">ราคา: 2.00 บาท | ปันผลรายสัปดาห์ ≈ 0.17%</div>
-      <button class="buy-button" onclick="location.href='buy.html'">ซื้อ</button>
-    </div>
-    <div class="asset-card">
-      <div class="asset-title">Meta Platforms Inc. (META)</div>
-      <div class="asset-info">ราคา: 2.00 บาท | ปันผลรายสัปดาห์ ≈ 0.05%</div>
-      <button class="buy-button" onclick="location.href='buy.html'">ซื้อ</button>
-    </div>
-    <div class="asset-card">
-      <div class="asset-title">NVIDIA Corp. (NVDA)</div>
-      <div class="asset-info">ราคา: 2.00 บาท | ปันผลรายสัปดาห์ ≈ 0.06%</div>
-      <button class="buy-button" onclick="location.href='buy.html'">ซื้อ</button>
-    </div>
+
+<header>GEMFINITY | สินทรัพย์ทั้งหมด</header>
+
+<div class="container">
+  <div class="asset-card">
+    <div class="asset-title">Apple Inc. (AAPL)</div>
+    <div class="asset-info">ราคา: 2.00 บาท | ปันผล ≈ 0.19%</div>
+    <button class="buy-button" onclick="showPopup()">BUY</button>
   </div>
+  <div class="asset-card">
+    <div class="asset-title">Tesla Inc. (TSLA)</div>
+    <div class="asset-info">ราคา: 2.00 บาท | ปันผล ≈ 0.08%</div>
+    <button class="buy-button" onclick="showPopup()">BUY</button>
+  </div>
+  <div class="asset-card">
+    <div class="asset-title">Microsoft Corp. (MSFT)</div>
+    <div class="asset-info">ราคา: 2.00 บาท | ปันผล ≈ 0.13%</div>
+    <button class="buy-button" onclick="showPopup()">BUY</button>
+  </div>
+</div>
+
+<div class="popup" id="popup">
+  <div class="popup-content">
+    <h2>ชำระเงินกับแอดมิน</h2>
+    <p>โปรดติดต่อแอดมินเพื่อดำเนินการซื้อ</p>
+    <a href="https://facebook.com/yourprofile" target="_blank">แชทกับแอดมิน</a><br><br>
+    <a href="#" onclick="hidePopup()" style="background-color: #ccc; color: #333;">ปิด</a>
+  </div>
+</div>
+
+<footer>
+  ผู้พัฒนาโดย : เซียน หยอง
+</footer>
+
+<script>
+  function showPopup() {
+    document.getElementById('popup').style.display = 'flex';
+  }
+
+  function hidePopup() {
+    document.getElementById('popup').style.display = 'none';
+  }
+</script>
+
 </body>
 </html>
